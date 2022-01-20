@@ -129,7 +129,14 @@ thumbz = fs.readFileSync('./image/thumb.jpg')
 fakez = fs.readFileSync('./image/fake.jpg')
 
     //── 「 LolKey 」 ──//
-HelKey = settings.HelKey
+HelKey = 'BayuPerkasa'
+ZEKSKEY = 'apivinz'
+HARDIKEY = 'hardianto'
+ZIYAPI = 'xZiyy'
+LEYSKEY = 'IkyOgiwara'
+FXC7KEY = 'LDQlH9CncZ'
+ZEROKEY = 'ZeroYT7'
+    //── 「 LolKey 」 ──//
 
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 
@@ -1010,7 +1017,7 @@ if (!settings.autorecording) {
 helga.updatePresence(from, Presence.recording)
 }
 if (budy.startsWith('helga')){
-sendButMessage(from, `${JSON.stringify(me, null, 2)}`, "*ZukaChan*", [{buttonId: 'igm', buttonText: {displayText: 'Instagram'}, type: 1},{buttonId: 'ytm', buttonText: {displayText: 'YouTube'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
+sendButMessage(from, `${JSON.stringify(me, null, 2)}`, "*RikkaChan*", [{buttonId: 'igm', buttonText: {displayText: 'Instagram'}, type: 1},{buttonId: 'ytm', buttonText: {displayText: 'YouTube'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
 }
 if(isButton == 'igm'){
 reply('http://instagram.com/helga_store20')
@@ -1120,9 +1127,9 @@ Sanksi: *‼️ PERMANENT BLOCK ‼️*
 
 Jika sudah dipahami rules-nya, silakan ketik *.menu* untuk memulai!
 
-⚠️ Segala kebijakan dan ketentuan ZukaChan di pegang oleh owner dan segala perubahan kebijakan, sewaktu waktu owner berhak mencabut, memblokir user(*﹏*) 
+⚠️ Segala kebijakan dan ketentuan RikkaChan di pegang oleh owner dan segala perubahan kebijakan, sewaktu waktu owner berhak mencabut, memblokir user(*﹏*) 
 
-Arigatou Gozaimasu! Untuk kalian user ramah dan Beberapa orang yg ikut membantu juga dalam project pembuatan ZukaChan-
+Arigatou Gozaimasu! Untuk kalian user ramah dan Beberapa orang yg ikut membantu juga dalam project pembuatan RikkaChan-
 😖🙏
 
 For GitHub : https://github.com/HelgaIlham
@@ -1136,7 +1143,7 @@ fill =`Hai Kak ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
 Jika Button Tidak Muncul Ketik .allmenu`
-menu =`ZukaChan`
+menu =`RikkaChan`
 gbutsan = [
 {buttonId:`allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`store`,buttonText:{displayText:'STORE MENU'},type:1},
@@ -1288,7 +1295,7 @@ mhan = await helga.prepareMessage(from, ofrply, image, {thumbnail: ofrply})
 const sendBtnVeryy = {
 imageMessage: mhan.message.imageMessage,
 contentText:`${jancok}`,
-footerText:'Terimakasih Sudah Mendaftar\n*©Helga Zex*', 
+footerText:'Terimakasih Sudah Mendaftar\n*RikkaChan*', 
 buttons: gbutsan,
 headerType: 4
 }
@@ -1356,7 +1363,7 @@ case 'nsfw':
 						nsfww.push(from)
 						fs.writeFileSync('./database/nsfww.json', JSON.stringify(nsfww))
 						reply('Sukses mengaktifkan fitur nsfw')
-						helga.sendMessage(from, `ZukaChan`, text)
+						helga.sendMessage(from, `RikkaChan`, text)
 					} else if (Number(args[0]) === 0) {
 						if (!isNsfw) return reply('Sudah Mati Kak')
 						var ini = nsfww.indexOf(from)
@@ -1378,7 +1385,7 @@ case 'loli':
               fs.writeFileSync(`./${sender}.jpeg`, await getBuffer(wipi))
 		      buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `➡️Next`},type:1}]
               imageMsg = ( await helga.prepareMessage(from, fs.readFileSync(`./${sender}.jpeg`), 'imageMessage', {thumbnail: Buffer.alloc(0)})).message.imageMessage
-              buttonsMessage = {footerText:'ZukaChan', imageMessage: imageMsg,
+              buttonsMessage = {footerText:'RikkaChan', imageMessage: imageMsg,
               contentText:`klik Next untuk ke gambar selanjut nya`,buttons,headerType:4}
               prep = await helga.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
               helga.relayWAMessage(prep)
@@ -1420,35 +1427,20 @@ anu =`Silahkan pilih salah satu di bawah`
  buttons = [{buttonId: 'setallmenu ori', buttonText: {displayText: 'ORI'}, type: 1},{buttonId: 'setallmenu simpel', buttonText: {displayText: 'SIMPEL'}, type: 1}]
 const skuygf = {
     contentText: `${anu}`,
-    footerText: '*ZukaChan*',
+    footerText: '*RikkaChan*',
     buttons: buttons,
     headerType: 1
 }
 await helga.sendMessage(from, skuygf, MessageType.buttonsMessage, {quoted: ftrol})
 }
 break
-//Sampai sini
-case 'jadibot':
-if (!isRegistered) return reply(`Registrasi dulu Kak ketik .verify`)
-menu = `Enak aja lu mau numpang sewa lah :v`
-katalog(menu)
-sendButLocation(from, `Hai ${pushname} ☺️`, "*_© 𝙰𝚢𝚊𝚊 𝚅2.ೃ࿐_*", {jpegThumbnail:ofrply}, [{buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWA 🎟️'},type:1}], {contextInfo: { mentionedJid: [dtod,otod,stod]}})
-break
-case 'stopjadibot':
-if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
-try {
-reply('Oke')
-fs.unlinkSync(`./sampah/${sender}.json`)
-client.close()
-} catch {
-reply('Oke')
-client.close()
-}
-break
 case 'owner':
-	case 'creator':
-case 'developer':
-		case 'author':
+case 'author':
+case 'develover':
+txt = `_*NOMER OWNER GW DI PRIVATE*_\n_*KARENA SUKA ADA YANG CHAT GAK JELAS NGENTOT*_`
+reply(txt)
+break
+case 'fajarreivacahya':
 let ini_list = []
 for (let i of ownerNumber) {
 const vname = helga.contacts[i] != undefined ? helga.contacts[i].vname || helga.contacts[i].notify : undefined
@@ -1477,6 +1469,44 @@ reply(mess.error.api)
 console.log(res)
 sendMediaURL(from,`${res.result.link}`,`${res.result.desc}`)
                     break
+case 'ytmp3':
+            if (args.length < 1) return reply('Link Nya Mana ?')
+            if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
+            teks = args.join(' ')
+            reply(mess.wait)
+            res = await y2mateA(teks).catch(e => {
+            reply('_[ ! ] Error Gagal Dalam Memasuki Web Y2mate_')
+})
+            result = `*YOUTUBE MP3 🎵*
+*Data Berhasil Didapatkan !!*
+⌖ _Title : ${res[0].judul}_
+⌖ _Ext : MP3_
+⌖ _Size : ${res[0].size}_
+\`\`\`Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit\`\`\``
+
+            sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: mek}).then((lalu) => {
+            sendFileFromUrl(res[0].link, document, {quoted: mek, mimetype: 'audio/mp3', filename: res[0].output})
+})
+            break
+case 'ytmp4':
+            if (args.length < 1) return reply('Link Nya Mana?')
+            if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
+            teks = args.join(' ')
+            reply(mess.wait)
+            res = await y2mateV(teks).catch(e => {
+            reply('_[ ! ] Error Gagal Memasuki Web Y2mate_')
+})
+            result = `*YOUTUBE MP4 🎥*
+*Data Berhasil Didapatkan !!*
+⌖ _Title : ${res[0].judul}_
+⌖ _Ext : MP4_
+⌖ _Size : ${res[0].size}_
+\`\`\`Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit\`\`\``
+
+            sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: mek}).then((lalu) => {
+            sendFileFromUrl(res[0].link, video, {quoted: mek, mimetype: 'video/mp4', filename: res[0].output})
+})
+            break
                     case 'tiktokdl': 
        case 'ttdl':
      case 'tiktok':
@@ -1503,7 +1533,7 @@ sendMediaURL(from,`${res.result.link}`,`${res.result.desc}`)
 const buttons = [{buttonId: 'antideletee on', buttonText: {displayText: 'ON✔️'}, type: 1},{buttonId: 'antideletee off', buttonText: {displayText: 'OFF✖️'}, type: 1}]
 const buttonMessage = {
     contentText: `${anu}`,
-    footerText: '*ZukaChan*',
+    footerText: '*RikkaChan*',
     buttons: buttons,
     headerType: 1
 }
@@ -1576,7 +1606,7 @@ break
 punten = [{buttonId: 'antiwame off', buttonText: {displayText: 'OFF✖️'}, type: 1},{buttonId: 'antiwame on', buttonText: {displayText: 'ON✔️'}, type: 1}]
 const btnasu = {
     contentText: `${anu}`,
-    footerText: '*_ZukaChan*',
+    footerText: '*_RikkaChan*',
     buttons: punten,
     headerType: 1
 }
@@ -1605,7 +1635,7 @@ await helga.sendMessage(from, btnasu, MessageType.buttonsMessage, {quoted: ftrol
 punten = [{buttonId: 'antilink off', buttonText: {displayText: 'OFF✖️'}, type: 1},{buttonId: 'antilink on', buttonText: {displayText: 'ON✔️'}, type: 1}]
 const btnasu = {
     contentText: `${anu}`,
-    footerText: '*ZukaChan*',
+    footerText: '*RikkaChan*',
     buttons: punten,
     headerType: 1
 }
@@ -1735,7 +1765,7 @@ break
 buttons = [{buttonId: `menu`, buttonText: {displayText: 'MENU'}, type: 1},{buttonId: `sewa`, buttonText: {displayText: 'SEWA BOT'}, type: 1}]
 const btnbc = {
     contentText: `${body.slice(4)}`,
-    footerText: '*ZukaChan*',
+    footerText: '*RikkaChan*',
     buttons: buttons,
     headerType: 1
 }
@@ -1750,7 +1780,7 @@ await helga.sendMessage(_.jid, btnbc, MessageType.buttonsMessage, {quoted: ftrol
 				case 'ttp':  
 				case 'attp':
               if (!isRegistered) return reply(`Registrasi dulu Kak ketik .verify`)
-					if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp ZukaChan`)
+					if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp RikkaChan`)
 					atetepe = await getBuffer(`https://api.lolhuman.xyz/api/${command}?apikey=${lolkey}&text=${encodeURIComponent(c)}`)
 					helga.sendMessage(from, atetepe, sticker, { quoted: mek })
 					break             
@@ -1763,48 +1793,6 @@ await helga.sendMessage(_.jid, btnbc, MessageType.buttonsMessage, {quoted: ftrol
 				}
                 mentions(ht, members_id, false)
                 break
-                case 'ytmp3':
-            if (args.length < 1) return reply('Link Nya Mana ?')
-            if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-            teks = args.join(' ')
-            reply(mess.wait)
-            res = await y2mateA(teks).catch(e => {
-            reply('_[ ! ] Error Gagal Dalam Memasuki Web Y2mate_')
-})
-            result = `*YOUTUBE MP3 🎵*
-
-*Data Berhasil Didapatkan !!*
-⌖ _Title : ${res[0].judul}_
-⌖ _Ext : MP3_
-⌖ _Size : ${res[0].size}_
-
-\`\`\`Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit\`\`\``
-
-            sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: mek}).then((lalu) => {
-            sendFileFromUrl(res[0].link, document, {quoted: mek, mimetype: 'audio/mp3', filename: res[0].output})
-})
-            break
-case 'ytmp4':
-            if (args.length < 1) return reply('Link Nya Mana?')
-            if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-            teks = args.join(' ')
-            reply(mess.wait)
-            res = await y2mateV(teks).catch(e => {
-            reply('_[ ! ] Error Gagal Memasuki Web Y2mate_')
-})
-            result = `*YOUTUBE MP4 🎥*
-
-*Data Berhasil Didapatkan !!*
-⌖ _Title : ${res[0].judul}_
-⌖ _Ext : MP4_
-⌖ _Size : ${res[0].size}_
-
-\`\`\`Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit\`\`\``
-
-            sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: mek}).then((lalu) => {
-            sendFileFromUrl(res[0].link, video, {quoted: mek, mimetype: 'video/mp4', filename: res[0].output})
-})
-            break
             case 'exif':
                     if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
 					const exifff = `${args.join(' ')}`
@@ -1813,68 +1801,8 @@ case 'ytmp4':
 					exif.create(namaPack, authorPack)
 					await reply('Done gan')
 				break
-				case 'sticker':
-					case 'stiker':
+					case 'sticker':
 					case 's':
-              if (!isRegistered) return reply(`Registrasi dulu Kak ketik .verify`)
-						if (isMedia && !mek.message.videoMessage || isQuotedImage) {
-							const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-							const media = await helga.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
-							await ffmpeg(`${media}`)
-									.input(media)
-									.on('start', function (cmd) {
-										console.log(`Started : ${cmd}`)
-									})
-									.on('error', function (err) {
-										console.log(`Error : ${err}`)
-										fs.unlinkSync(media)
-										reply(mess.error.api)
-									})
-									.on('end', function () {
-										console.log('Finish')
-										exec(`webpmux -set exif ./sticker/data.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
-											if (error) return reply(mess.error.api)
-											helga.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, {quoted: mek})
-											fs.unlinkSync(media)	
-											fs.unlinkSync(`./sticker/${sender}.webp`)	
-										})
-									})
-									.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-									.toFormat('webp')
-									.save(`./sticker/${sender}.webp`)
-						} else if ((isMedia && mek.message.videoMessage.fileLength < 10000000 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
-							const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-							const media = await helga.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
-							reply(mess.wait)
-								await ffmpeg(`${media}`)
-									.inputFormat(media.split('.')[4])
-									.on('start', function (cmd) {
-										console.log(`Started : ${cmd}`)
-									})
-									.on('error', function (err) {
-										console.log(`Error : ${err}`)
-										fs.unlinkSync(media)
-										tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-										reply(mess.error.api)
-									})
-									.on('end', function () {
-										console.log('Finish')
-										exec(`webpmux -set exif ./sticker/data.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
-											if (error) return reply(mess.error.api)
-											helga.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, {quoted: mek})
-											fs.unlinkSync(media)
-											fs.unlinkSync(`./sticker/${sender}.webp`)
-										})
-									})
-									.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-									.toFormat('webp')
-									.save(`./sticker/${sender}.webp`)
-						} else {
-							reply(`Kirim gambar/video dengan caption ${prefix}sticker atau tag gambar/video yang sudah dikirim\nNote : Durasi video maximal 10 detik`)
-						}
-						break
-					case 'stickerwm':
-					case 'swm':
               if (!isRegistered) return reply(`Registrasi dulu Kak ketik .verify`)
 						if (isMedia && !mek.message.videoMessage || isQuotedImage) {
 							ppp = `${args.join(' ')}`
@@ -2087,7 +2015,7 @@ case 'ytmp4':
 punten = [{buttonId: 'welcome off', buttonText: {displayText: 'OFF✖️'}, type: 1},{buttonId: 'welcome on', buttonText: {displayText: 'ON✔️'}, type: 1}]
 const btngrass = {
     contentText: `${anu}`,
-    footerText: '*ZukaChan*',
+    footerText: '*RikkaChan*',
     buttons: punten,
     headerType: 1
 }
